@@ -25,6 +25,6 @@ export const api = remultApi({
     };
   },
     dataProvider: createPostgresConnection({
-        connectionString: "postgres://postgres:postgres@34.40.48.5:5432/postgres",
+        connectionString: "postgresql://neondb_owner:npg_5O1KMakLSTqw@ep-dawn-breeze-a258zhbs-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
     })
 });
