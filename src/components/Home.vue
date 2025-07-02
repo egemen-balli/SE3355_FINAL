@@ -178,7 +178,7 @@ async function addToWatchlist(movieId: number) {
                                                     </router-link>
                                                     <div class="ipc-poster-card__actions">
                                                         <button
-                                                            @click="addToWatchlist(movie.id)"
+                                                            @click="addToWatchlist(movie.id!)"
                                                             class="ipc-btn ipc-btn--full-width ipc-btn--center-align-content ipc-btn--default-height ipc-btn--core-baseAlt ipc-btn--theme-baseAlt ipc-btn--button-radius ipc-btn--on-accent2 ipc-secondary-button">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24"

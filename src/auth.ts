@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export const user = ref(null)
+export const user = ref<any>(null)
 export const googleUser = ref<null | {
   name: string
   email: string

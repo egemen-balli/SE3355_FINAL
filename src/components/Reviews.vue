@@ -38,7 +38,7 @@ onMounted(async () => {
                               d="M8.71 11.71l2.59 2.59c.39.39 1.02.39 1.41 0l2.59-2.59c.63-.63.18-1.71-.71-1.71H9.41c-.89 0-1.33 1.08-.7 1.71z">
                             </path>
                           </svg><select id="user-review-rating-filter" class="ipc-simple-select__input">
-                            <option value="see_all" selected="">Show all</option>
+                            <option value="see_all">Show all</option>
                             <option value="1">1 star</option>
                             <option value="2">2 stars</option>
                             <option value="3">3 stars</option>
@@ -64,7 +64,7 @@ onMounted(async () => {
                                 d="M8.71 11.71l2.59 2.59c.39.39 1.02.39 1.41 0l2.59-2.59c.63-.63.18-1.71-.71-1.71H9.41c-.89 0-1.33 1.08-.7 1.71z">
                               </path>
                             </svg><select id="sort-by-selector" class="ipc-simple-select__input">
-                              <option value="HELPFULNESS_SCORE" selected="">Featured</option>
+                              <option value="HELPFULNESS_SCORE">Featured</option>
                               <option value="SUBMISSION_DATE">Review date</option>
                               <option value="TOTAL_VOTES">Total votes</option>
                               <option value="SUBMITTER_REVIEW_COUNT">Prolific reviewer</option>

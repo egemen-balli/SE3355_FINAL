@@ -23,7 +23,7 @@ function changeLang(lang: any) {
 }
 
 function toggleDropdown() {
-  const el = searchBarDropdown.value
+  const el: any = searchBarDropdown.value
   if (el) {
     const currentDisplay = getComputedStyle(el).display
     el.style.display = currentDisplay === 'none' ? 'block' : 'none'

@@ -7,7 +7,7 @@ import type { Movie } from "../shared/movie";
 import { fetchUser, user, signedIn, signOut, googleUser } from '../auth'
 
 const route = useRoute();
-const movie = ref<Movie | null>(null);
+const movie = ref<Movie | null | undefined>(null);
 
 const router = useRouter()
 
@@ -176,7 +176,7 @@ onMounted(async () => {
                                             </div>
                                             <div class="sc-acdbf0f3-0 iaJqqu rating-bar__base-button">
                                                 <div class="sc-acdbf0f3-1 ioCFan">YOUR RATING</div>
-                                                <button @click="goToReview(movie.id)"
+                                                <button @click="goToReview(movie!.id!)"
                                                     class="ipc-btn ipc-btn--single-padding ipc-btn--center-align-content ipc-btn--default-height ipc-btn--core-baseAlt ipc-btn--theme-baseAlt ipc-btn--button-radius ipc-btn--on-textPrimary ipc-text-button sc-acdbf0f3-2 brjkFP"
                                                     ><span class="ipc-btn__text">
                                                         <div class="sc-acdbf0f3-3 fRlpFA">
