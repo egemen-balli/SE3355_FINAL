@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsx src/server",
+    "start": "tsx watch --tsconfig tsconfig.server.json src/server",
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" -- && tsc -p tsconfig.server.json",
     "preview": "vite preview",
