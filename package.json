@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsx watch --tsconfig tsconfig.server.json src/server",
+    "start": "tsx src/server",
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" -- && tsc -p tsconfig.server.json",
+    "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "dev-node": "tsx watch --tsconfig tsconfig.server.json src/server"
+    "type-check": "vue-tsc --noEmit",
+    "dev-node": "tsx watch src/server"
   },
   "dependencies": {
     "@railway/cli": "^4.5.4",
