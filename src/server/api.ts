@@ -9,7 +9,6 @@ import { ReviewsController } from "../shared/ReviewsController";
 import { createPostgresConnection } from "remult/postgres";
 import { remult } from "remult";
 
-
 export const api = remultApi({
     entities: [Movie, Actor, Review, AppUser],
     controllers: [MoviesController, ActorsController, ReviewsController],
@@ -26,6 +25,6 @@ export const api = remultApi({
     };
   },
     dataProvider: createPostgresConnection({
-        connectionString: "postgres://postgres:postgres@localhost/postgres",
+        connectionString: "postgres://postgres:postgres@34.40.48.5:5432/postgres",
     })
 });
