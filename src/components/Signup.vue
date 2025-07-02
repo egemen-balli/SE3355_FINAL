@@ -60,7 +60,7 @@ const doRegister = async () => {
   }
 }
 
-const citiesByCountry = {
+const citiesByCountry: any = {
     turkey: ['Istanbul', 'Ankara', 'Izmir'],
     england: ['London', 'Manchester', 'Liverpool'],
     usa: ['New York', 'Los Angeles', 'Chicago']
