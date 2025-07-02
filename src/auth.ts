@@ -46,11 +46,6 @@ export async function signIn(email: string, password: string) {
   signedIn.value = true
 }
 
-export async function signInGoogle(name: string) {
-  googleUsername.value = name
-  signedIn.value = true
-}
-
 export async function register(
   name: string,
   email: string,
