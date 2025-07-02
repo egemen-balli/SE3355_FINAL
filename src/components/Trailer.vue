@@ -6,7 +6,7 @@ import { MoviesController } from "../shared/MoviesController";
 import type { Movie } from "../shared/movie";
 
 const route = useRoute();
-const movie = ref<Movie | null>(null);
+const movie = ref<Movie | null | any>(null);
 
 onMounted(async () => {
   const id = Number(route.params.id);

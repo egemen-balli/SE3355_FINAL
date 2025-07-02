@@ -10,7 +10,7 @@ import { remult } from "remult";
 export const auth = Router();
 const client = new OAuth2Client("1063463680190-oi81jpdoivdq48t1orog7v2m4vd1hcsb.apps.googleusercontent.com");
 
-auth.post("/api/google-login", async (req, res) => {
+auth.post("/api/google-login", async (req: any, res) => {
   const { credential } = req.body;
   if (!credential) return res.status(400).json({ message: "No credential" });
 
@@ -24,7 +24,7 @@ auth.post("/api/google-login", async (req, res) => {
     if (!payload || !payload.email) return res.status(400).json({ message: "No email from Google" });
 
     const repo = remult.repo(AppUser);
-    let user = await repo.findOne({ where: { email: payload.email } });
+    let user: any = await repo.findOne({ where: { email: payload.email } });
 
     if (!user) {
       user = await repo.insert({
@@ -32,7 +32,7 @@ auth.post("/api/google-login", async (req, res) => {
         name: payload.name || "No Name",
         photo_url: payload.picture,
         google_id: payload.sub
-      });
+      } as any);
     }
 
     req.session.userId = user.id;
@@ -44,10 +44,10 @@ auth.post("/api/google-login", async (req, res) => {
 });
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
+  destination: function (req, file, cb: any) {
     cb(null, "uploads/");
   },
-  filename: function (req, file, cb) {
+  filename: function (req, file: any, cb: any) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     const ext = path.extname(file.originalname);
     cb(null, file.fieldname + "-" + uniqueSuffix + ext);
@@ -56,7 +56,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-auth.post("/api/register", upload.single("photo"), async (req, res) => {
+auth.post("/api/register", upload.single("photo"), async (req: any, res) => {
   const { email, password, name, country, city } = req.body;
   const photoFile = req.file;
 
@@ -80,7 +80,7 @@ auth.post("/api/register", upload.single("photo"), async (req, res) => {
   res.json(user);
 });
 
-auth.post("/api/login", async (req, res) => {
+auth.post("/api/login", async (req: any, res) => {
   const { email, password } = req.body;
 
   const user = await db.oneOrNone("SELECT * FROM users WHERE email = $1", [email]);
