@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { signIn, signInGoogle, setUser } from '../auth'
+import { signIn, setUser } from '../auth'
 import { useRouter } from 'vue-router'
 import { jwtDecode } from 'jwt-decode'
 
@@ -18,10 +18,10 @@ async function doLogin() {
     }
 }
 
-const callback = (response) => {
+const callback = (response: any) => {
   if (response?.credential) {
     try {
-      const decoded = jwtDecode(response.credential)
+      const decoded: any = jwtDecode(response.credential)
       setUser({
         name: decoded.name,
         email: decoded.email,

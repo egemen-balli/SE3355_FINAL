@@ -1,7 +1,7 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { db } from "./db";
-import multer from "multer";
+import multer from "multer"
 import path from "path";
 import { OAuth2Client } from "google-auth-library";
 import { AppUser } from "../shared/user";
@@ -44,10 +44,10 @@ auth.post("/api/google-login", async (req: any, res) => {
 });
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb: any) {
+  destination: function (req: any, file: any, cb: any) {
     cb(null, "uploads/");
   },
-  filename: function (req, file: any, cb: any) {
+  filename: function (req: any, file: any, cb: any) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     const ext = path.extname(file.originalname);
     cb(null, file.fieldname + "-" + uniqueSuffix + ext);

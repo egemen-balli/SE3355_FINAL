@@ -29,7 +29,7 @@ export class ReviewsController {
             description,
             rating,
             country,
-            user_id: parseInt(user.id)
+            user_id: parseInt(user!.id)
         });
     }
 }
