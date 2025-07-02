@@ -1,33 +1,50 @@
-# frontend
+## Demo
+https://drive.google.com/file/d/1dq4RG47Ua6btxefYPhe2WcgAcGyCQLxf/view?usp=drive_link
+## Live Deployment
+- **Live URL**: https://se-3355-final-git-master-egemen-ballis-projects.vercel.app/
+## Overview
+This is a comprehensive movie platform where users can explore films, rate and review them, and maintain personalized watchlists. It features multilingual support, intuitive navigation, and seamless login options including both standard email/password and Google OAuth authentication.
+### Key Features
 
-This template should help get you started developing with Vue 3 in Vite.
+- **Movie Discovery**: Browse popular movies, search by title/people
+- **User Ratings & Reviews**: Rate movies (1-10 scale) and write detailed reviews
+- **Personal Watchlist**: Save movies to Watchlist
+- **User Authentication**: Local registration/login + Google OAuth
+- **Internationalization**: Multi-language support (English/Turkish)
+- **Responsive Design**: Optimized for desktop and mobile devices (Responsive)
+- **Real-time Search**: Typeahead suggestions and advanced search capabilities
 
-## Recommended IDE Setup
+Integrated MVC structure combining frontend (Vue) and backend (Express + Remult) in a single cohesive codebase
+![resim](https://github.com/user-attachments/assets/f9da63f8-52c5-40fc-b2aa-c762c317eb57)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Tech Stack
 
-## Type Support for `.vue` Imports in TS
+### Frontend
+- **Vue3**
+- **TypeScript**
+- **CSS3**
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Backend
+- **Express**
+- **Remult**
+- **PostgreSQL**
 
-## Customize configuration
+### Deployment
+**Vercel**
+**Node.js**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Problems Encountered & Solutions
 
-## Project Setup
+### 1. Google OAuth Integration
+**Problem**: Complex OAuth flow with Azure-hosted backend required careful configuration.
+**Solution**:
+- Used a separate application state to distinguish users authenticated via Google OAuth
+- Ensured seamless user experience by managing session state independently from local authentication
+- Handled token decoding and user data mapping securely on the client side
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+### 2. Unified Deployment with Remult
+**Problem**: Using Remult tightly couples the frontend and backend, which made simultaneous deployment and execution challenging during production setup.
+**Solution**:
+- Structured the project to serve both frontend and backend from a single Express server
+- Configured build and serve scripts to ensure proper order and compatibility
+- Ensured static frontend assets are correctly served after backend APIs are initialized
